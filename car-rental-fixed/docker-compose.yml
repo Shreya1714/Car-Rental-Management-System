@@ -1,0 +1,16 @@
+services:
+  car-rental-app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - car-rental-data:/app/data
+    environment:
+      # Optional: set this to enable the real Claude-powered AI assistant.
+      # Without it, the assistant automatically falls back to a built-in
+      # rule-based responder, so the app still runs fully without a key.
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    restart: unless-stopped
+
+volumes:
+  car-rental-data:

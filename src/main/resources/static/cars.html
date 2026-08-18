@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Cars — DriveEasy Rentals</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="page-loading">
+
+<div id="siteNav"></div>
+
+<main class="container py-4">
+  <div class="page-header">
+    <h1>Find Your Ride</h1>
+    <p>Search availability by date and book instantly.</p>
+  </div>
+
+  <div class="search-card mb-4">
+    <div class="section-heading mb-3"><i class="bi bi-search"></i>Search Availability</div>
+    <form id="searchForm">
+      <div class="row g-3 align-items-end">
+        <div class="col-sm-4">
+          <label class="search-label" for="startDate">Pick-up Date</label>
+          <input type="date" class="form-control" id="startDate" name="startDate" required>
+        </div>
+        <div class="col-sm-4">
+          <label class="search-label" for="endDate">Return Date</label>
+          <input type="date" class="form-control" id="endDate" name="endDate" required>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-brand w-100 py-2">
+            <i class="bi bi-search me-2"></i>Search
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="d-flex flex-wrap gap-2 mt-3" id="filterChips">
+      <button class="filter-chip active" data-type="ALL">All types</button>
+      <button class="filter-chip" data-type="SUV">SUV</button>
+      <button class="filter-chip" data-type="SEDAN">Sedan</button>
+      <button class="filter-chip" data-type="TRAVELLER">Traveller</button>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="section-heading mb-0"><i class="bi bi-car-front"></i>Available Cars</div>
+    <span class="results-count" id="resultsCount"></span>
+  </div>
+  <div class="row g-3 mb-5" id="availableGrid"></div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/cars.js"></script>
+</body>
+</html>
